@@ -1,0 +1,4 @@
+package br.com.empresa.service;
+
+public class UsuarioService {
+}
