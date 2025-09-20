@@ -1,0 +1,10 @@
+/* Oculta a barra de rolagem, mas permite a rolagem */
+body {
+    -ms-overflow-style: none; /* para o Internet Explorer, Edge */
+    scrollbar-width: none; /* para o Firefox */
+}
+
+/* Oculta a barra de rolagem para o Chrome, Safari, Opera */
+body::-webkit-scrollbar {
+    display: none;
+}

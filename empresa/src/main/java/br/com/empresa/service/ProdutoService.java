@@ -27,7 +27,7 @@ public Optional<Produto> buscarProdutoPorId(Long id){
 }
 
 public void deletarProduto(Long id){
-    produtoRepository.delete(id);
+    produtoRepository.deleteById(id);
 }
 
 }
