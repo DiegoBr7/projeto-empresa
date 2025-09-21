@@ -18,12 +18,24 @@ private Long id ;
 
 private String nome;
 private String descricao;
-private BigDecimal preco_Produto;
+
+@Column(name = "preco_produto")
+private BigDecimal precoProduto;
+
+
 private Integer quantidade;
-private Date data_Criacao;
+
+@Temporal(TemporalType.TIMESTAMP)
+@Column(name = "data_criacao")
+private Date dataCriacao;
 
 @ManyToOne
 @JoinColumn(name = "usuario_id")
 private Usuario usuario;
 
+
+@PrePersist
+    public void prePersist(){
+    this.dataCriacao = new Date();
+}
 }
