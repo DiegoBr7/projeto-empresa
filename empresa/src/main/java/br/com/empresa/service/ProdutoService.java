@@ -37,6 +37,12 @@ public List<Produto> buscarTodosProdutos(){
     return produtoRepository.findAll();
 }
 
+
+public List<Produto> buscarPorNome(String nome) {
+  return produtoRepository.findByNomeContainingIgnoreCase(nome);
+    }
+
+
 public Produto buscarProdutoPorId(Long id){
 
     return produtoRepository.findById(id)

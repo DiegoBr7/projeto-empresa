@@ -72,4 +72,16 @@ public class ApiProdutoController {
         return dto;
     }
 
+
+
+    @PreAuthorize("hasAnyRole('ANALISTA','SUPERVISOR')")
+    @GetMapping("/buscar")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ProdutoDTO> buscarPorNome(@RequestParam String nome) {
+        return produtoService.buscarPorNome(nome)
+                .stream()
+                .map(this::toDTO)
+                .toList();
+    }
+
 }
